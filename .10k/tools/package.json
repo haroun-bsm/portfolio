@@ -1,0 +1,17 @@
+{
+  "name": "10k-websites-max-tools",
+  "private": true,
+  "type": "module",
+  "description": "Safe preview, media encoding, scroll tracking and responsive checks for the 10k-websites-max skill.",
+  "scripts": {
+    "preview": "node preview.mjs",
+    "check": "node check.mjs",
+    "encode": "node encode.mjs",
+    "track": "node track.mjs",
+    "typesync": "node typesync.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "^1.63.0",
+    "sharp": "^0.35.4"
+  }
+}
