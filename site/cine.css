@@ -1,0 +1,292 @@
+/* cine.css — Haroun Ben Salem portfolio · the nocturne cinematic layer.
+   Bespoke for this page only; the engines (scene.js / fx.js) stay untouched.
+   direction: Zellige Nocturne — midnight navy, tile-cream, jade instruments, oxblood.
+
+   contents
+   1 tokens                5 global reveal charge (data-k-in)
+   2 silver grade          6 timeline draw
+   3 progress rail         7 second ribbon lane
+   4 pointer ring          8 the sitter — signature 3-D portrait interlude
+                           9 reduced motion + small screens */
+
+:root {
+  --cine-ease: cubic-bezier(0.19, 1, 0.22, 1);
+  --silver-1: #F0EBDF;          /* tile cream — names on ink */
+  --silver-2: #D9D3C6;          /* cream, one step down into the night */
+  --silver-3: #8D99AB;          /* shaded slate */
+  --cine-line: rgba(240, 235, 223, 0.14);
+}
+
+/* ---------- 2 · the nocturne grade: tints the page's real photography, never grays it ---------- */
+/* Real product surfaces and real photos keep their color; one mild print pass unifies them. */
+html { color-scheme: dark; }
+canvas[data-k-depth] { filter: none; }
+.fx-expand-media > img,
+.card-media img,
+.t-thumb img,
+.id-card img {
+  filter: saturate(1.02) contrast(1.04) brightness(1.01);
+  transition: filter 500ms ease;
+}
+.fig-note { letter-spacing: 0.1em; }
+
+/* the flagship captions yield to the cockpit as it fills the screen:
+   the split name keeps the flanks; chip + sub fade rather than overprint white media */
+.fx-expand-stage .fg-chip,
+.fx-expand-stage .fg-sub {
+  opacity: min(1, max(0, calc((0.62 - var(--fx-p, 0)) * 3.6)));
+  translate: 0 calc(var(--fx-p, 0) * -14px);
+  transition: none;
+}
+/* the caption scrim belongs to the collapsed state; it must not print over the media */
+.flagship .fx-expand-text::before {
+  opacity: max(0, calc((0.45 - var(--fx-p, 0)) * 2.4));
+}
+
+/* ---------- 3 · the measuring rail: full-document progress, right edge ---------- */
+.cine-rail {
+  position: fixed; right: clamp(16px, 2.4vw, 40px); top: 50%;
+  translate: 0 -50%; height: 38vh; width: 1px;
+  background: rgba(240, 236, 226, 0.12);
+  z-index: 45; pointer-events: none;
+}
+.cine-rail i {
+  position: absolute; inset: 0; transform-origin: top;
+  background: linear-gradient(180deg, var(--accent), rgba(122, 208, 184, 0.25) 88%);
+  transform: scaleY(var(--rp, 0));
+  box-shadow: 0 0 12px rgba(122, 208, 184, 0.35);
+}
+.cine-rail-read {
+  position: fixed; right: clamp(10px, 1.6vw, 28px); top: calc(50% + 20vh + 14px);
+  font: 400 0.6rem var(--font-mono); letter-spacing: 0.2em;
+  color: #6E7F99; z-index: 45; pointer-events: none;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 900px) { .cine-rail, .cine-rail-read { display: none; } }
+
+/* nav bows out while reading down, returns on the way up; the active room is marked */
+.site-nav { transition: background-color 300ms ease, border-color 300ms ease, transform 480ms var(--cine-ease), box-shadow 480ms ease; will-change: transform; }
+.site-nav.is-away { transform: translate3d(0, -104%, 0); }
+.nav-links a { position: relative; }
+.nav-links a::after {
+  content: ""; position: absolute; left: 0; right: 100%; bottom: 0;
+  height: 1px; background: var(--accent); opacity: 0.55;
+  transition: right 300ms var(--cine-ease), opacity 300ms ease;
+}
+.nav-links a:hover::after, .nav-links a[data-current]::after { right: 0; opacity: 0.55; }
+
+/* ---------- 4 · the pointer ring: difference-blend instrument cursor ---------- */
+.cine-cursor {
+  position: fixed; left: 0; top: 0; z-index: 80; pointer-events: none;
+  width: 30px; height: 30px; margin: -15px 0 0 -15px;
+  border: 1px solid #f6f6f4; border-radius: 50%;
+  mix-blend-mode: difference; opacity: 0;
+  transition: opacity 400ms ease, scale 380ms var(--cine-ease);
+}
+.cine-cursor.is-on { opacity: 0.85; }
+.cine-cursor.is-hot { scale: 1.75; }
+.cine-cursor::after {
+  content: ""; position: absolute; left: 50%; top: 50%; translate: -50% -50%;
+  width: 3px; height: 3px; border-radius: 50%; background: #fff;
+}
+@media (hover: none), (pointer: coarse) { .cine-cursor { display: none; } }
+
+/* ---------- 5 · the reveal charge: every data-k-in enters from a lower, deeper place ---------- */
+.k-on [data-k-in] {
+  transform: translateY(46px) scale(0.988);
+  filter: blur(5px);
+  transition:
+    opacity 1.05s var(--cine-ease),
+    transform 1.05s var(--cine-ease),
+    filter 1.05s var(--cine-ease);
+}
+.k-on [data-k-in].is-in { transform: none; filter: none; }
+
+/* framed photography: masked reveal + emulsion pan, driven from cine.js */
+figure[data-cine~="frame"] {
+  clip-path: inset(calc((1 - var(--rv, 1)) * 30%) round 2px);
+  background: var(--bg-deep);
+}
+figure[data-cine~="frame"] img {
+  transform: translateY(calc((0.5 - var(--pp, 0.5)) * 5.5%)) scale(calc(1.16 - 0.14 * var(--rv, 1)));
+  transform-origin: 50% 40%;
+  will-change: transform;
+}
+[data-cine~="frame"] { isolation: isolate; }
+
+/* ---------- 6 · the timeline draw: the record draws itself as you scroll ---------- */
+.timeline { --tlp: 0; }
+.k-on .tl-fill { transform: scaleY(var(--tlp, 1)); }
+
+/* ---------- 7 · the second ribbon lane: a dimmer, counter-drifting echo ---------- */
+.ribbon-b { opacity: 1; border-top: 0; padding-block: 11px; background: rgba(19, 29, 47, 0.06); }
+.ribbon-b .fx-marquee-track { animation-direction: reverse; }
+.ribbon-b .ribbon-row span { font-size: clamp(0.78rem, 0.6rem + 0.7vw, 0.95rem); color: #8697AF; }
+.ribbon-b .ribbon-row i { color: var(--accent-soft); }
+
+/* ---------- 8 · the sitter — signature portrait interlude ---------- */
+/* A pinned, scroll-scrubbed 2.5-D moment built on WebGL luminance relief:
+   the user's real portrait, lit and displaced by code, never by generation. */
+.sitter { position: relative; height: calc(100vh + 220vh); background: var(--bg-deep); }
+.sitter-stage {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: clip;
+  display: grid; place-items: center;
+}
+.sitter-veil {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background:
+    linear-gradient(180deg, var(--bg) 0%, transparent 12%, transparent 90%, var(--bg-deep) 100%);
+}
+.sitter-halo {
+  position: absolute; z-index: 1; pointer-events: none;
+  inset: 0; display: grid; place-items: center;
+}
+/* giant outline surname, drifting against the scroll */
+.sitter-name {
+  position: absolute; z-index: 2; left: 50%; top: 50%;
+  translate: -50% -54%;
+  margin: 0; line-height: 0.8; pointer-events: none;
+  font: 400 clamp(72px, 15vw, 218px)/0.82 var(--font-display);
+  letter-spacing: 0.015em; text-transform: uppercase; white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(242, 235, 220, 0.18);
+  transform: translate3d(calc((0.5 - var(--sp, 0.2)) * -14vw), 0, 0);
+  opacity: calc(max(0, min(1, (var(--sp, 0) - 0.02) * 8)) * max(0, min(1, (1 - var(--sp, 0)) * 3.1)));
+  will-change: transform, opacity;
+}
+.sitter-name i {
+  display: block;
+  font: italic 420 clamp(22px, 3vw, 40px)/1.4 var(--font-serif);
+  letter-spacing: 0.06em;
+  -webkit-text-stroke: 0;
+  color: var(--silver-3);
+  text-align: center;
+  margin-top: 0.4em;
+}
+/* the plate: aura clone → still fallback → WebGL rel portrait */
+.sitter-plate {
+  position: relative; z-index: 4;
+  width: calc(clamp(330px, 60vh, 560px) * 0.75);
+  aspect-ratio: 3 / 4;
+  transform-style: preserve-3d;
+}
+.sitter-aura {
+  position: absolute; inset: -17%; z-index: 0;
+  width: 134%; height: 134%; object-fit: cover;
+  filter: sepia(0.55) hue-rotate(-14deg) saturate(1.15) brightness(0.55) blur(30px);
+  opacity: 0.6; pointer-events: none;
+}
+.sitter-still {
+  position: absolute; inset: 0; z-index: 1;
+  width: 100%; height: 100%; object-fit: cover;
+  filter: sepia(0.42) hue-rotate(-12deg) saturate(1.05) contrast(1.08) brightness(0.94);
+}
+.sitter-canvas {
+  position: absolute; inset: 0; z-index: 2;
+  width: 100%; height: 100%; display: block;
+}
+.sitter-plate::after {
+  content: ""; position: absolute; inset: -1px; z-index: 3; pointer-events: none;
+  box-shadow: inset 0 0 0 1px var(--cine-line);
+}
+.sitter-frame,
+.sitter-frame::before {
+  position: absolute; pointer-events: none; border: 0 solid var(--cine-line);
+}
+.sitter-frame { inset: -13px; border-width: 1px; z-index: 5; }
+.sitter-frame::before {
+  content: ""; inset: -6px; border-width: 0;
+  border-left-width: 1px; border-right-width: 1px;
+  opacity: 0.55;
+}
+/* cinematic chrome */
+.sitter-chrome {
+  position: absolute; z-index: 6; inset: 0; pointer-events: none;
+  padding: clamp(84px, 12vh, 128px) clamp(20px, 6vw, 96px);
+  font-family: var(--font-mono);
+}
+.sitter-k {
+  position: absolute; top: clamp(84px, 12vh, 128px); left: clamp(20px, 6vw, 96px);
+  margin: 0;
+  font: 400 0.6875rem/1.6 var(--font-mono); letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--silver-3);
+}
+.sitter-k b { color: var(--silver-2); font-weight: 500; }
+.sitter-reel {
+  position: absolute; top: clamp(84px, 12vh, 128px); right: clamp(20px, 6vw, 96px);
+  margin: 0; text-align: right;
+  font: 400 0.6rem/1.7 var(--font-mono); letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--silver-3);
+  opacity: 0.8;
+}
+.sitter-cap {
+  position: absolute; left: clamp(20px, 6vw, 96px); bottom: clamp(36px, 9vh, 96px);
+  margin: 0;
+  font: 400 0.8125rem/1.7 var(--font-mono); letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--silver-2);
+  opacity: calc(max(0, min(1, (var(--sp, 0) - var(--a, 0)) * 7)) * max(0, min(1, (var(--b, 1) - var(--sp, 0)) * 7)));
+  transform: translateY(calc((1 - min(1, max(0, (var(--sp, 0) - var(--a, 0)) * 7))) * 22px));
+}
+.sitter-cap em {
+  font: italic 420 1.02rem/1.6 var(--font-serif);
+  letter-spacing: 0.02em; text-transform: none;
+  color: var(--accent-soft); display: block; margin-top: 2px;
+}
+.sitter-cap-1 { --a: 0.06; --b: 0.42; }
+.sitter-cap-2 { --a: 0.30; --b: 0.66; bottom: calc(clamp(36px, 9vh, 96px) + 58px); }
+.sitter-cap-3 { --a: 0.545; --b: 0.97; bottom: calc(clamp(36px, 9vh, 96px) + 116px); }
+.sitter-noir {
+  position: absolute; z-index: 2; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(10, 7, 4, 0.55), transparent 30%, transparent 70%, rgba(10, 7, 4, 0.55)),
+    radial-gradient(120% 90% at 50% 46%, transparent 46%, rgba(8, 5, 3, 0.5) 100%);
+}
+/* WebGL unavailable: keep the still with the same treatment */
+.sitter.is-static .sitter-canvas, .sitter.is-static .sitter-aura { display: none; }
+.sitter.is-static { height: auto; }
+.sitter.is-static .sitter-stage { position: relative; height: auto; min-height: 100svh; padding-block: clamp(56px, 10vh, 120px); }
+
+/* ---------- 9 · reduced motion: everything composed, nothing moving ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .cine-cursor { display: none; }
+  .sitter-name, .sitter-cap { opacity: 1; transform: none; }
+  .k-on [data-k-in] { opacity: 1; transform: none; filter: none; transition: none; }
+  figure[data-cine~="frame"] { clip-path: none; }
+  figure[data-cine~="frame"] img { transform: none; }
+  .tl-fill { transform: none; }
+  .ribbon-b .fx-marquee-track { animation: none; }
+}
+
+/* ---------- small screens ---------- */
+/* the flagship becomes a widescreen ticket card instead of a thin strip in a void */
+@media (max-width: 720px) {
+  .flagship[data-fx~="expand"] { height: 220vh; }
+  .flagship .fx-expand-stage { grid-template-rows: 1fr; grid-template-columns: 1fr; }
+  .flagship .fx-expand-media, .flagship .fx-expand-text { grid-column: 1; grid-row: 1; }
+  .flagship .fx-expand-media {
+    position: relative; inset: auto;
+    width: min(94vw, 560px); aspect-ratio: 1320 / 504;
+    border: 1px solid var(--cine-line);
+    box-shadow: 0 26px 70px -30px rgba(0, 0, 0, 0.72);
+    background: var(--bg-deep);
+  }
+  .flagship .fx-expand-media > img { padding: clamp(10px, 3.4vw, 20px); transform: none; }
+  .flagship .fx-expand-media::after, .flagship .fx-expand-text::before { display: none; }
+  .flagship .fx-expand-text { padding: 0 clamp(20px, 7vw, 30px); align-content: center; gap: 6px; }
+  .fg-word { font: 400 clamp(2.4rem, 12.5vw, 4.2rem)/0.92 var(--font-display); }
+  .fx-apart > :first-child { transform: translateX(calc(var(--fx-p, 1) * -15vw)); }
+  .fx-apart > :last-child  { transform: translateX(calc(var(--fx-p, 1) * 15vw)); }
+}
+
+@media (max-width: 900px) {
+  .sitter { height: calc(100vh + 150vh); }
+  .sitter-plate { width: min(76vw, 420px); }
+  .sitter-aura { inset: -12%; width: 124%; height: 124%; filter: sepia(0.55) hue-rotate(-14deg) saturate(1.15) brightness(0.52) blur(22px); }
+  .sitter-name { font-size: clamp(56px, 21vw, 150px); top: 46%; }
+  .sitter-name i { font-size: clamp(15px, 3.4vw, 24px); }
+  .sitter-reel { display: none; }
+  .sitter-cap { bottom: clamp(24px, 6vh, 60px); font-size: 0.72rem; letter-spacing: 0.18em; }
+  .sitter-cap-2 { bottom: calc(clamp(24px, 6vh, 60px) + 48px); }
+  .sitter-cap-3 { bottom: calc(clamp(24px, 6vh, 60px) + 96px); }
+  .sitter-cap em { font-size: 0.94rem; }
+}

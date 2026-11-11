@@ -3,27 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Haroun Ben Salem — Data Engineer | AI Engineer · Open for Summer 2027</title>
-  <meta name="description" content="Portfolio of Haroun Ben Salem, Data Engineer | AI Engineer: billing-audit pipelines that encode 23 rules and 38 quality checks, RAG products at 92% accuracy, Kafka/Spark streams at 5K events per second. Open for a high-impact summer 2027 internship.">
-  <meta name="theme-color" content="#0B0A08">
+  <title>Haroun Ben Salem — Data Engineer | AI Engineer · Open for PFE 2027</title>
+  <meta name="description" content="Portfolio of Haroun Ben Salem, Data Engineer | AI Engineer: billing-audit pipelines that encode 23 rules and 38 quality checks, RAG products at 92% accuracy, Kafka/Spark streams at 5K events per second. Open for a high-impact PFE 2027.">
+  <meta name="theme-color" content="#0D1522">
+  <link rel="canonical" href="https://haroun-ben-salem.pages.dev/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-180.png">
   <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://haroun-ben-salem.pages.dev/">
   <meta property="og:title" content="Haroun Ben Salem — Data Engineer | AI Engineer">
-  <meta property="og:description" content="Pipelines that hold. Models that answer. Open for summer 2027.">
-  <meta property="og:image" content="assets/og.jpg">
-  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <meta property="og:description" content="Systems that hold. Models that answer. Open for PFE 2027.">
+  <meta property="og:image" content="https://haroun-ben-salem.pages.dev/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Haroun Ben Salem — Data Engineer | AI Engineer">
+  <meta name="twitter:description" content="Systems that hold. Models that answer. Open for PFE 2027.">
+  <meta name="twitter:image" content="https://haroun-ben-salem.pages.dev/assets/og.jpg">
+  <!-- LCP image first: the engine's --k-poster is data-image itself, so this is first-paint AND texture -->
+  <link rel="preload" href="assets/hero-field.webp" as="image" media="(min-width: 721px)">
+  <link rel="preload" href="assets/hero-field-m.webp" as="image" media="(max-width: 720px)">
+  <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/fraunces-300-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/plexmono-500.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="scene.css">
-  <link rel="stylesheet" href="fx.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/site.min.css">
   <noscript>
     <style>
       .k-band, [data-k-in] { opacity: 1 !important; visibility: visible !important; transform: none !important; }
       .hero .k-band { position: relative; left: auto; right: auto; }
+      .hero[data-k-hero] { height: auto !important; }
       .hero .k-stage { position: relative; height: auto; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; gap: 2rem; padding: 18vh clamp(20px, 6vw, 96px) clamp(40px, 8vh, 96px); }
+      .hero .mast { position: relative; inset: auto; top: auto; transform: none; padding-top: 12vh; }
+      .hero canvas { display: none !important; }
+      .badge-spin { animation: none !important; }
+      /* the portrait plate carries its own geometry from style.css — just pin the motion off */
+      .k-plane-subject { transform: none !important; }
     </style>
   </noscript>
   <script type="application/ld+json">
@@ -31,6 +46,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Haroun Ben Salem",
+    "url": "https://haroun-ben-salem.pages.dev/",
     "jobTitle": "Data Engineer | AI Engineer",
     "email": "mailto:harounbensalem02@gmail.com",
     "sameAs": ["https://www.linkedin.com/in/harounbensalem/"],
@@ -39,199 +55,275 @@
   }
   </script>
 </head>
-<body>
+<body data-fx="shift" data-fx-stops="0 #0E1626 #EDE8DA, 1 #0A101B #EDE8DA">
+  <div class="aura aura-drift" aria-hidden="true"></div>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-nav" aria-label="Site">
-    <a class="brand" href="#top">HAROUN·BEN·SALEM</a>
+    <a class="brand" href="#top">HAROUN·B·SALEM</a>
     <nav class="nav-links" aria-label="Sections">
+      <a href="#proof">Proof</a>
       <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
+      <a href="#track">Track record</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="status-chip" href="#contact"><span class="dot" aria-hidden="true"></span>Open for summer 2027</a>
+    <a class="status-chip" href="#contact"><span class="dot" aria-hidden="true"></span>Open for PFE 2027</a>
   </header>
 
   <main id="main">
 
-    <!-- ============ HOOK — depth hero ============ -->
-    <section id="top" class="hero" data-k-hero data-k-span="3" aria-label="Haroun Ben Salem — Data Engineer and AI Engineer. Pipelines that hold, models that answer.">
+    <!-- ============ 00 · HOOK — DATA · AI opens the page, the field holds the camera ============ -->
+    <section id="top" class="hero k-media-ready" data-k-hero data-k-span="3.6" aria-label="Haroun Ben Salem — Data Engineer and AI Engineer. Systems that hold, models that answer.">
       <div class="k-stage">
-        <canvas data-k-depth data-image="assets/hero-field.webp" data-depth="assets/hero-field-depth.png"
-                data-image-mobile="assets/hero-field-m.webp" data-depth-mobile="assets/hero-field-m-depth.png"
-                data-strength="0.1" data-push="0.38" data-pointer="1" aria-hidden="true"></canvas>
+        <canvas data-k-depth data-image="assets/hero-field.webp" data-depth="assets/hero-field-depth.webp"
+                data-image-mobile="assets/hero-field-m-tiny.webp" data-depth-mobile="assets/hero-field-m-depth-tiny.webp"
+                data-strength="0.1" data-push="0.42" data-pointer="1" aria-hidden="true"></canvas>
+        <canvas class="plex" data-plex="plexus" data-frac="0.72" aria-hidden="true"></canvas>
         <div class="k-plane k-plane-hero-grain" data-k-layer="0.22" data-k-drift="8" aria-hidden="true"></div>
-        <div class="k-plane k-plane-hero-light" data-k-layer="0.38" aria-hidden="true"></div>
         <div class="k-plane k-plane-hero-vign" aria-hidden="true"></div>
 
-        <div class="k-band hero-band hero-band-1" data-k-band="0 0.55">
-          <p class="kicker k-line" style="--i:0">Haroun Ben Salem — Data Engineer | AI Engineer</p>
-          <h1>
-            <span class="k-line" style="--i:1">Pipelines that hold.</span>
-            <span class="k-line" style="--i:2">Models that answer.</span>
-          </h1>
+        <!-- the depth-portrait plate: himself, standing in the cream field — the "3D model of himself" -->
+        <div class="k-plane k-plane-subject" data-k-layer="0.06" data-k-drift="8" aria-hidden="true">
+          <picture>
+            <source media="(max-width: 720px)" srcset="assets/hero-subject-m.webp">
+            <img src="assets/hero-subject.webp" width="880" height="1150" alt="" loading="lazy" decoding="async">
+          </picture>
         </div>
 
-        <div class="k-band hero-band hero-band-2" data-k-band="0.58 1">
-          <p class="hero-lede k-line" style="--i:0">I build the quiet systems data lives in — Airflow orchestrations, Kafka streams, dbt-tested models — and the AI products that read them.</p>
-          <div class="hero-cta k-line" style="--i:1">
-            <a class="btn btn-hero" href="mailto:harounbensalem02@gmail.com">Start the conversation</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/harounbensalem/" rel="me noopener">LinkedIn</a>
+        <h1 class="mast" aria-label="Haroun Ben Salem — Data Engineer and AI Engineer">
+          <span class="mast-word" aria-hidden="true">
+            <b style="--i:0">D</b><b style="--i:1">A</b><b style="--i:2">T</b><b style="--i:3">A</b><b class="mast-dot" style="--i:4"></b><b style="--i:5">A</b><b style="--i:6">I</b>
+          </span>
+        </h1>
+
+        <div class="badge-badge" aria-hidden="true">
+          <svg class="badge-spin" viewBox="0 0 120 120" width="112" height="112">
+            <defs><path id="badge-arc" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+            <text class="badge-text"><textPath href="#badge-arc" startOffset="0">OPEN FOR PFE 2027 · DATA · AI ·&#8202;</textPath></text>
+            <path class="badge-star" d="M60 47 l4.6 8.4 8.4 4.6 -8.4 4.6 -4.6 8.4 -4.6 -8.4 -8.4 -4.6 8.4 -4.6 z"/>
+          </svg>
+        </div>
+
+        <div class="k-band hero-band hero-band-1" data-k-band="0 0.52">
+          <div class="hero-id">
+            <div class="hero-id-copy">
+              <p class="kicker k-line" style="--i:0">Hello, I'm</p>
+              <p class="hero-name k-line" style="--i:1">Haroun Ben Salem</p>
+              <p class="hero-role k-line" style="--i:2">Data engineer &amp; AI engineer</p>
+              <p class="hero-lede k-line" style="--i:3">I build the quiet systems data lives in — Airflow orchestrations, Kafka streams, dbt-tested models — and the AI products that read them.</p>
+              <p class="hero-open k-line" style="--i:4"><span class="dot" aria-hidden="true"></span>Seeking a high-impact PFE — 2027</p>
+            </div>
+            <div class="hero-stats k-line" style="--i:5">
+              <div class="h-stat"><span class="h-stat-n" data-fx-to="4" data-fx-prefix="0">04</span><span class="h-stat-l">engineering internships</span></div>
+              <div class="h-stat"><span class="h-stat-n" data-fx-to="7" data-fx-prefix="0">07</span><span class="h-stat-l">systems shipped</span></div>
+              <div class="h-stat"><span class="h-stat-n" data-fx-to="3" data-fx-prefix="0">03</span><span class="h-stat-l">AI products in the open</span></div>
+            </div>
           </div>
-          <p class="hero-open k-line" style="--i:2"><span class="dot" aria-hidden="true"></span>Seeking a high-impact summer internship — 2027</p>
+        </div>
+
+        <div class="k-band hero-band hero-band-2" data-k-band="0.56 1">
+          <div class="hero-cta k-line" style="--i:0">
+            <a class="btn btn-hero" href="mailto:harounbensalem02@gmail.com" data-fx="magnet" data-fx-strength="0.25">Start the conversation</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/harounbensalem/" rel="me noopener" data-fx="magnet" data-fx-strength="0.25">LinkedIn</a>
+          </div>
+          <p class="hero-band-meta k-line" style="--i:1">Systems that hold · Models that answer · PFE 2027</p>
         </div>
       </div>
     </section>
 
-    <!-- ============ TENSION — proof of work ============ -->
-    <section id="statement" class="statement">
-      <div class="wrap">
-        <div class="sec-head" data-k-in>
-          <p class="kicker">Proof of work</p>
-          <h2>Résumés say data engineer.<br>This page shows the pipelines.</h2>
+    <!-- ============ ribbon ============ -->
+    <div class="ribbon" data-fx="marquee" data-fx-seconds="34" aria-hidden="true">
+      <div class="ribbon-row">
+        <span>Systems that hold</span><i>✦</i>
+        <span>Models that answer</span><i>✦</i>
+        <span>23 billing rules encoded</span><i>✦</i>
+        <span>38 data-quality checks</span><i>✦</i>
+        <span>5K events / second</span><i>✦</i>
+        <span>92% RAG accuracy</span><i>✦</i>
+        <span>Batch &amp; online parity</span><i>✦</i>
+      </div>
+    </div>
+    <div class="ribbon ribbon-b" data-fx="marquee" data-fx-seconds="52" aria-hidden="true">
+      <div class="ribbon-row">
+        <span>Systems that hold</span><i>✦</i>
+        <span>Models that answer</span><i>✦</i>
+        <span>23 billing rules encoded</span><i>✦</i>
+        <span>38 data-quality checks</span><i>✦</i>
+        <span>5K events / second</span><i>✦</i>
+        <span>92% RAG accuracy</span><i>✦</i>
+        <span>Batch &amp; online parity</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ 01 · TENSION — proof of work ============ -->
+    <section id="proof" class="proof section">
+      <div class="wrap proof-grid">
+        <div class="proof-main">
+          <div class="sec-head" data-k-in>
+            <p class="chapter">01 · Proof of work</p>
+            <h2 data-fx="split">Résumés say data engineer.<br><em>This page shows the pipelines.</em></h2>
+          </div>
+          <blockquote class="pull" data-k-in>
+            <p>Every number on this page belongs to a system I actually built — with names, dates and gradeable output. Read it the way a manager reads a README: context, challenge, build, proof.</p>
+            <footer>— the working method behind every section below</footer>
+          </blockquote>
         </div>
-        <p class="statement-copy" data-k-in>Every number on this page belongs to a system I actually built — with names, dates and gradeable output. Read it the way a manager reads a README: context, challenge, build, proof.</p>
-        <dl class="metrics" data-k-in>
-          <div class="metric">
-            <dt class="metric-n">04</dt>
-            <dd><span class="kicker kicker-tight">Engineering internships</span><span class="metric-d">BI → cloud automation → applied AI</span></dd>
+        <aside class="contents" data-k-in aria-label="Page index">
+          <p class="contents-k">Index</p>
+          <ol class="contents-list">
+            <li><a href="#proof"><span class="c-n">01</span>Proof of work<span class="arr">→</span></a></li>
+            <li><a href="#work"><span class="c-n">02</span>The receipts<span class="arr">→</span></a></li>
+            <li><a href="#track"><span class="c-n">03</span>Track record<span class="arr">→</span></a></li>
+            <li><a href="#contact"><span class="c-n">04</span>Open ticket<span class="arr">→</span></a></li>
+          </ol>
+        </aside>
+      </div>
+      <div class="wrap">
+        <dl class="metrics">
+          <div class="metric" data-k-in>
+            <dt class="metric-n" data-fx-count data-fx-to="4" data-fx-prefix="0">04</dt>
+            <dd><span class="metric-k">Engineering internships</span><span class="metric-d">BI → cloud automation → applied AI</span></dd>
           </div>
-          <div class="metric">
-            <dt class="metric-n">07</dt>
-            <dd><span class="kicker kicker-tight">Systems shipped</span><span class="metric-d">each one a working pipeline behind it</span></dd>
+          <div class="metric" data-k-in style="--d:1">
+            <dt class="metric-n" data-fx-count data-fx-to="7" data-fx-prefix="0">07</dt>
+            <dd><span class="metric-k">Systems shipped</span><span class="metric-d">each one a working pipeline behind it</span></dd>
           </div>
-          <div class="metric">
-            <dt class="metric-n">03</dt>
-            <dd><span class="kicker kicker-tight">AI products in the open</span><span class="metric-d">recommenders, RAG, ops agents</span></dd>
+          <div class="metric" data-k-in style="--d:2">
+            <dt class="metric-n" data-fx-count data-fx-to="3" data-fx-prefix="0">03</dt>
+            <dd><span class="metric-k">AI products in the open</span><span class="metric-d">recommenders, RAG, ops agents</span></dd>
           </div>
-          <div class="metric metric-accent">
-            <dt class="metric-n">01</dt>
-            <dd><span class="kicker kicker-tight">Open ticket</span><span class="metric-d">a high-impact summer 2027 internship</span></dd>
+          <div class="metric metric-accent" data-k-in style="--d:3">
+            <dt class="metric-n" data-fx-count data-fx-to="1" data-fx-prefix="0">01</dt>
+            <dd><span class="metric-k">Open ticket</span><span class="metric-d">a high-impact PFE 2027</span></dd>
           </div>
         </dl>
       </div>
     </section>
 
-    <!-- ============ TURN + PROOF — selected work ============ -->
-    <section id="work" class="work">
+    <!-- ============ 02 · TURN + PROOF — the receipts ============ -->
+    <section id="work" class="work section">
       <div class="wrap">
-        <div class="sec-head" data-k-in>
-          <p class="kicker">Selected work</p>
+        <div class="sec-head work-head" data-fx="split">
+          <p class="chapter">02 · Selected work</p>
           <h2>The receipts.</h2>
         </div>
+        <p class="work-intro" data-k-in>One flagship case, four working systems. Every screenshot below is the real product surface — the generated stand-ins retired.</p>
+      </div>
 
-        <!-- flagship case -->
-        <article class="flagship" data-k-in aria-labelledby="fg-title">
-          <header class="flagship-head">
-            <p class="chip chip-flag">Flagship — full case</p>
-            <h3 id="fg-title">InvoiceGuard</h3>
-            <p class="flagship-sub">Intelligent utility-billing audit &amp; anomaly detection system.</p>
-          </header>
-          <div class="flagship-grid">
-            <aside class="flagship-meta">
-              <div class="meta-rail">
-                <p class="meta-k">Role</p><p class="meta-v">Design &amp; build, solo</p>
-              </div>
-              <div class="meta-rail">
-                <p class="meta-k">Stack</p><p class="meta-v">Python · SQL · Pandas · FastAPI · PostgreSQL · XGBoost · Great Expectations</p>
-              </div>
-              <div class="meta-rail">
-                <p class="meta-k">Status</p><p class="meta-v">Engineered end-to-end</p>
-              </div>
-            </aside>
-            <figure class="flagship-media">
-              <img src="assets/work/case-0.webp" width="1320" height="604" alt="The InvoiceGuard review queue: invoices scored against the encoded rules, a review budget and quality gates before anything leaves the system" loading="lazy" decoding="async">
-              <figcaption class="media-note">The InvoiceGuard review queue, live — every invoice is scored by the rule set before it leaves the system.</figcaption>
-            </figure>
+      <!-- flagship: the cockpit grows out of its frame and fills the screen while the name splits -->
+      <article id="invoiceguard" class="flagship" data-fx="expand" data-fx-span="2" aria-labelledby="fg-title">
+        <div class="fx-expand-stage">
+          <div class="fx-expand-media">
+            <img src="assets/work/guard-app.webp" width="1320" height="504"
+                 alt="The InvoiceGuard operations cockpit on the synthetic billing corpus: review queue, quality gates and the current run's scored invoices" loading="lazy" decoding="async">
           </div>
-          <div class="flagship-story">
-            <div class="story-block">
-              <p class="meta-k">The context</p>
+          <div class="fx-expand-text">
+            <p class="fg-chip">Flagship — full case · <span id="fg-title">InvoiceGuard</span></p>
+            <h3 class="fg-word fx-apart" aria-label="InvoiceGuard"><span aria-hidden="true">INVOICE</span><span aria-hidden="true">GUARD</span></h3>
+            <p class="fg-sub">Intelligent utility-billing audit &amp; anomaly detection system.</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="wrap">
+        <div class="flagship-story">
+          <div class="meta-rail" data-k-in>
+            <div class="meta-rail-row"><p class="meta-k">Role</p><p class="meta-v">Design &amp; build, solo</p></div>
+            <div class="meta-rail-row"><p class="meta-k">Stack</p><p class="meta-v">Python · SQL · Pandas · FastAPI · PostgreSQL · XGBoost · Great Expectations</p></div>
+            <div class="meta-rail-row"><p class="meta-k">Status</p><p class="meta-v">Engineered end-to-end</p></div>
+          </div>
+          <div class="story-blocks">
+            <div class="story-block" data-k-in style="--d:1">
+              <p class="story-n">01</p><p class="meta-k">The context</p>
               <p>Utilities bill through SAP IS-U and Opencell. Two export schemas, bending tariffs, and errors that compound into retries, VAT drift and bills customers should never receive.</p>
             </div>
-            <div class="story-block">
-              <p class="meta-k">The brief</p>
+            <div class="story-block" data-k-in style="--d:2">
+              <p class="story-n">02</p><p class="meta-k">The brief</p>
               <p>Standardize the heterogeneous billing exports into one canonical model, encode the rules a real audit would apply, and let statistics catch what rules can't.</p>
             </div>
-            <div class="story-block">
-              <p class="meta-k">The build</p>
+            <div class="story-block" data-k-in style="--d:3">
+              <p class="story-n">03</p><p class="meta-k">The build</p>
               <p>23 deterministic billing rules across tariff compliance, consumption anomalies and VAT reconciliation — plus 38 Great Expectations-compatible data-quality checks. An XGBoost anomaly engine with hybrid risk scoring, batch and online at parity. FastAPI services on PostgreSQL with SQLAlchemy and Alembic migrations. Factur-X / EN&nbsp;16931 e-invoice validation. Prometheus metrics, GitHub Actions CI.</p>
             </div>
           </div>
-          <ul class="stamps" aria-label="InvoiceGuard results">
-            <li class="stamp"><span class="stamp-n">23</span><span class="stamp-l">billing rules encoded</span></li>
-            <li class="stamp"><span class="stamp-n">38</span><span class="stamp-l">data-quality checks</span></li>
-            <li class="stamp"><span class="stamp-n">Parity</span><span class="stamp-l">batch / online scoring</span></li>
-            <li class="stamp"><span class="stamp-n">EN 16931</span><span class="stamp-l">e-invoice validation</span></li>
-          </ul>
-        </article>
+        </div>
+        <ul class="stamps" aria-label="InvoiceGuard results">
+          <li class="stamp" data-k-in style="--d:0"><span class="stamp-n">23</span><span class="stamp-l">billing rules encoded</span></li>
+          <li class="stamp" data-k-in style="--d:1"><span class="stamp-n">38</span><span class="stamp-l">data-quality checks</span></li>
+          <li class="stamp" data-k-in style="--d:2"><span class="stamp-n">Parity</span><span class="stamp-l">batch / online scoring</span></li>
+          <li class="stamp" data-k-in style="--d:3"><span class="stamp-n">EN 16931</span><span class="stamp-l">e-invoice validation</span></li>
+        </ul>
 
-        <!-- four cards -->
-        <div class="work-grid" data-fx="spotlight">
-          <article class="card" data-k-in style="--d:0">
-            <figure class="card-media">
-              <img src="assets/work/case-1.webp" width="1030" height="644" alt="The VIF Cosmetics skin-analysis interface: face analysis, personalised advice and routine screens in French" loading="lazy" decoding="async">
-            </figure>
-            <p class="chip">Shipped · in production — Celestial Wave Digital</p>
-            <h3>VIF Cosmetics</h3>
-            <p class="card-lede">AI skincare analysis that reads a face and recommends like a pharmacist.</p>
-            <p class="card-body">Facial images drive a skin-profile analysis in a multilingual embedding space; retrieval fuses pgvector semantic search with PostgreSQL full-text over the catalog; a deterministic recommender ranks products by goals, eligibility and weighted rules — with the analytics that grade every suggestion.</p>
-            <ul class="stamps stamps-mini">
-              <li class="stamp"><span class="stamp-n">Hybrid</span><span class="stamp-l">vector + full-text retrieval</span></li>
-              <li class="stamp"><span class="stamp-n">Deterministic</span><span class="stamp-l">rule-weighted ranking</span></li>
-            </ul>
-            <p class="tags">Next.js · FastAPI · Python · PostgreSQL · pgvector</p>
-          </article>
+        <!-- the four receipts: pinned sideways filing cabinet -->
+        <div class="rail-pin" data-fx="rail" data-k-in aria-label="Selected systems — pinned horizontal gallery">
+          <div class="fx-rail-stage">
+            <div class="fx-rail-track" data-fx="spotlight">
+              <article class="card" style="--c:0" data-fx="hover-tilt" data-fx-max="4">
+                <figure class="card-media">
+                  <img src="assets/work/skin-app.webp" width="1030" height="644" alt="The VIF Cosmetics homepage: your skin story told through a real AI skin-analysis product" loading="lazy" decoding="async">
+                </figure>
+                <div class="card-row"><span class="c-no">01</span>
+                  <div><h3>VIF Cosmetics</h3><p class="c-sub">Shipped · in production — Celestial Wave Digital</p></div>
+                </div>
+                <p class="card-lede">AI skincare analysis that reads a face and recommends like a pharmacist.</p>
+                <p class="card-body">Facial images drive a skin-profile analysis in a multilingual embedding space; retrieval fuses pgvector semantic search with PostgreSQL full-text over the catalog; a deterministic recommender ranks products by goals, eligibility and weighted rules — with the analytics that grade every suggestion.</p>
+                <p class="tags">Next.js · FastAPI · Python · PostgreSQL · pgvector</p>
+              </article>
 
-          <article class="card" data-k-in style="--d:1">
-            <figure class="card-media card-media-wide">
-              <img src="assets/work/case-2.webp" width="1030" height="515" alt="Project graphic for the RAG e-commerce assistant: retrieval-augmented chat over the catalog with LangChain, OpenAI, FAISS and FastAPI" loading="lazy" decoding="async">
-            </figure>
-            <p class="chip">Personal system — evaluated</p>
-            <h3>RAG e-commerce assistant</h3>
-            <p class="card-lede">Answers with receipts over a 10,000-product catalog.</p>
-            <p class="card-body">LangChain-orchestrated retrieval with FAISS vectors, served through FastAPI on Docker — and graded against a held-out evaluation set instead of vibes.</p>
-            <ul class="stamps stamps-mini">
-              <li class="stamp"><span class="stamp-n">92%</span><span class="stamp-l">answer accuracy</span></li>
-              <li class="stamp"><span class="stamp-n">&lt;1s</span><span class="stamp-l">p95 latency</span></li>
-            </ul>
-            <p class="tags">LangChain · OpenAI · FAISS · FastAPI · Docker</p>
-          </article>
+              <article class="card" style="--c:1" data-fx="hover-tilt" data-fx-max="4">
+                <figure class="card-media">
+                  <img src="assets/work/rag-app.webp" width="753" height="468" alt="The RAG e-commerce assistant: LangChain-orchestrated retrieval over a 10,000-product catalog with FAISS vector search" loading="lazy" decoding="async">
+                </figure>
+                <div class="card-row"><span class="c-no">02</span>
+                  <div><h3>RAG e-commerce assistant</h3><p class="c-sub">Personal system — evaluated</p></div>
+                </div>
+                <p class="card-lede">Answers with receipts over a 10,000-product catalog.</p>
+                <p class="card-body">LangChain-orchestrated retrieval with FAISS vectors, served through FastAPI on Docker — and graded against a held-out evaluation set instead of vibes.</p>
+                <ul class="stamps stamps-mini">
+                  <li class="stamp"><span class="stamp-n">92%</span><span class="stamp-l">answer accuracy</span></li>
+                  <li class="stamp"><span class="stamp-n">&lt;1s</span><span class="stamp-l">p95 latency</span></li>
+                </ul>
+                <p class="tags">LangChain · OpenAI · FAISS · FastAPI · Docker</p>
+              </article>
 
-          <article class="card" data-k-in style="--d:2">
-            <figure class="card-media">
-              <img src="assets/work/case-3.webp" width="1030" height="644" alt="Stylized render of the fraud-detection event stream: five thousand events per second flagged and scored" loading="lazy" decoding="async">
-              <figcaption class="fig-note">Stylized render of the event stream.</figcaption>
-            </figure>
-            <p class="chip">Streaming — live</p>
-            <h3>Real-time fraud detection</h3>
-            <p class="card-lede">Five thousand events a second, judged once.</p>
-            <p class="card-body">Kafka ingestion into Spark Streaming, an Isolation Forest anomaly model, PostgreSQL persistence and live Grafana dashboards watching the drift.</p>
-            <ul class="stamps stamps-mini">
-              <li class="stamp"><span class="stamp-n">5K/s</span><span class="stamp-l">events ingested</span></li>
-              <li class="stamp"><span class="stamp-n">F1 0.94</span><span class="stamp-l">Isolation Forest</span></li>
-            </ul>
-            <p class="tags">Kafka · Spark Streaming · PostgreSQL · Grafana</p>
-          </article>
+              <article class="card" style="--c:2" data-fx="hover-tilt" data-fx-max="4">
+                <figure class="card-media">
+                  <img src="assets/work/case-3.webp" width="1030" height="644" alt="Stylized render of the fraud-detection event stream: five thousand events per second flagged and scored" loading="lazy" decoding="async">
+                </figure>
+                <p class="fig-note">Stylized render of the event stream.</p>
+                <div class="card-row"><span class="c-no">03</span>
+                  <div><h3>Real-time fraud detection</h3><p class="c-sub">Streaming — live</p></div>
+                </div>
+                <p class="card-lede">Five thousand events a second, judged once.</p>
+                <p class="card-body">Kafka ingestion into Spark Streaming, an Isolation Forest anomaly model, PostgreSQL persistence and live Grafana dashboards watching the drift.</p>
+                <ul class="stamps stamps-mini">
+                  <li class="stamp"><span class="stamp-n">5K/s</span><span class="stamp-l">events ingested</span></li>
+                  <li class="stamp"><span class="stamp-n">F1 0.94</span><span class="stamp-l">Isolation Forest</span></li>
+                </ul>
+                <p class="tags">Kafka · Spark Streaming · PostgreSQL · Grafana</p>
+              </article>
 
-          <article class="card" data-k-in style="--d:3">
-            <figure class="card-media">
-              <img src="assets/work/case-4.webp" width="512" height="320" alt="Banking data-warehouse summary graphic: raw data through dimensional modeling to executive dashboards" loading="lazy" decoding="async">
-            </figure>
-            <p class="chip">Dimensional modeling — dbt-tested</p>
-            <h3>Banking data warehouse</h3>
-            <p class="card-lede">Numbers a CFO can sign.</p>
-            <p class="card-body">Dimensional model on PostgreSQL with dbt Core transformations and tests, SCD&nbsp;Type&nbsp;2 customer tracking, automated ELT on GitHub Actions, and Metabase dashboards for deposits, loan performance and customer behavior.</p>
-            <ul class="stamps stamps-mini">
-              <li class="stamp"><span class="stamp-n">SCD 2</span><span class="stamp-l">customer history</span></li>
-              <li class="stamp"><span class="stamp-n">dbt</span><span class="stamp-l">tested transforms</span></li>
-            </ul>
-            <p class="tags">dbt Core · PostgreSQL · Python · Metabase · GH Actions</p>
-          </article>
+              <article class="card" style="--c:3" data-fx="hover-tilt" data-fx-max="4">
+                <figure class="card-media">
+                  <img src="assets/work/bank-app.webp" width="753" height="468" alt="Banking data warehouse: raw data through dbt dimensional modeling to executive dashboards" loading="lazy" decoding="async">
+                </figure>
+                <div class="card-row"><span class="c-no">04</span>
+                  <div><h3>Banking data warehouse</h3><p class="c-sub">Dimensional modeling — dbt-tested</p></div>
+                </div>
+                <p class="card-lede">Numbers a CFO can sign.</p>
+                <p class="card-body">Dimensional model on PostgreSQL with dbt Core transformations and tests, SCD&nbsp;Type&nbsp;2 customer tracking, automated ELT on GitHub Actions, and Metabase dashboards for deposits, loan performance and customer behavior.</p>
+                <ul class="stamps stamps-mini">
+                  <li class="stamp"><span class="stamp-n">SCD 2</span><span class="stamp-l">customer history</span></li>
+                  <li class="stamp"><span class="stamp-n">dbt</span><span class="stamp-l">tested transforms</span></li>
+                </ul>
+                <p class="tags">dbt Core · PostgreSQL · Python · Metabase · GH Actions</p>
+              </article>
+            </div>
+          </div>
         </div>
 
         <div class="also" data-k-in>
-          <p class="meta-k">Also shipped</p>
+          <p class="also-k">✦ The rest of the shelf</p>
           <ul>
             <li><strong>Customer segmentation</strong> — K-Means, GMM &amp; Deep Embedded Clustering over RFM features; PCA / autoencoder reductions; shipped as a Streamlit app.</li>
             <li><strong>Marketing data pipeline</strong> — daily Airflow extract-clean-load orchestration with Grafana-monitored data-quality SLAs and Slack alerts.</li>
@@ -241,41 +333,54 @@
       </div>
     </section>
 
-    <!-- ============ PROOF — experience ============ -->
-    <section id="experience" class="experience">
+    <!-- ============ 03 · PROOF — track record ============ -->
+    <section id="track" class="track section">
       <div class="wrap">
         <div class="sec-head" data-k-in>
-          <p class="kicker">Experience</p>
-          <h2>Four internships,<br>four different rooms.</h2>
+          <p class="chapter">03 · Track record</p>
+          <h2 data-fx="split">Four internships,<br><em>four different rooms.</em></h2>
         </div>
 
         <ol class="timeline">
-          <li class="t-row" data-k-in>
-            <p class="t-when kicker-tight">2026 → now</p>
+          <i class="tl-fill" aria-hidden="true"></i>
+          <li class="t-row" data-k-in style="--d:0">
+            <p class="t-when">2026 → now</p>
             <div class="t-body">
-              <h3>Celestial Wave Digital <span class="t-role">— AI Engineer / Data &amp; AI Engineering Intern</span></h3>
-              <p>Shipping VIF Cosmetics end-to-end: the AI skin-analysis workflow, hybrid pgvector retrieval, a deterministic recommendation pipeline, the REST workflows behind it — and the analytics that grade every recommendation.</p>
+              <figure class="t-thumb"><img src="assets/work/case-1b.webp" width="498" height="498" alt="The VIF Cosmetics product chrome: the VIF wordmark, the Analyse navigation and the pink campaign florals — a different frame from the homepage" loading="lazy" decoding="async"></figure>
+              <div class="t-text">
+                <h3>Celestial Wave Digital <span class="t-role">— AI Engineer / Data &amp; AI Engineering Intern</span></h3>
+                <p>Shipping VIF Cosmetics end-to-end: the AI skin-analysis workflow, hybrid pgvector retrieval, a deterministic recommendation pipeline, the REST workflows behind it — and the analytics that grade every recommendation.</p>
+              </div>
             </div>
           </li>
-          <li class="t-row" data-k-in>
-            <p class="t-when kicker-tight">2025</p>
+          <li class="t-row" data-k-in style="--d:1">
+            <p class="t-when">2025</p>
             <div class="t-body">
-              <h3>FelCloud <span class="t-role">— AI Engineer Intern</span></h3>
-              <p>LangChain + Ollama (Mistral) agents automating OpenStack diagnostics; log-analysis workflows that cut system response time; modular agents for VM monitoring and health checks.</p>
+              <figure class="t-thumb"><img src="assets/work/openstack-exp.webp" width="498" height="498" alt="AI agents automating OpenStack diagnostics: log analysis, VM monitoring and health checks" loading="lazy" decoding="async"></figure>
+              <div class="t-text">
+                <h3>FelCloud <span class="t-role">— AI Engineer Intern</span></h3>
+                <p>LangChain + Ollama (Mistral) agents automating OpenStack diagnostics; log-analysis workflows that cut system response time; modular agents for VM monitoring and health checks.</p>
+              </div>
             </div>
           </li>
-          <li class="t-row" data-k-in>
-            <p class="t-when kicker-tight">2023</p>
+          <li class="t-row" data-k-in style="--d:2">
+            <p class="t-when">2023</p>
             <div class="t-body">
-              <h3>Khallasli Sousse <span class="t-role">— BI Analyst Intern</span></h3>
-              <p>End-to-end ETL pipelines and automated refresh workflows that minimized manual reporting hours; dynamic Power BI dashboards that department heads steered decisions by.</p>
+              <figure class="t-thumb"><img src="assets/work/powerbi-exp.webp" width="498" height="498" alt="Power BI dashboards steered by ETL pipelines: total sales up 12.5 percent across regions" loading="lazy" decoding="async"></figure>
+              <div class="t-text">
+                <h3>Khallasli Sousse <span class="t-role">— BI Analyst Intern</span></h3>
+                <p>End-to-end ETL pipelines and automated refresh workflows that minimized manual reporting hours; dynamic Power BI dashboards that department heads steered decisions by.</p>
+              </div>
             </div>
           </li>
-          <li class="t-row" data-k-in>
-            <p class="t-when kicker-tight">2022</p>
+          <li class="t-row" data-k-in style="--d:3">
+            <p class="t-when">2022</p>
             <div class="t-body">
-              <h3>PayPOS Sousse <span class="t-role">— Software Engineering Intern</span></h3>
-              <p>A real-time chat application on Node.js + Express + Socket.IO; a hybrid MongoDB + MySQL database architecture; REST APIs supporting scalable real-time messaging.</p>
+              <figure class="t-thumb"><img src="assets/work/chat-exp.webp" width="492" height="498" alt="Node.js real-time chat application: Socket.IO messaging across a MongoDB and MySQL hybrid store" loading="lazy" decoding="async"></figure>
+              <div class="t-text">
+                <h3>PayPOS Sousse <span class="t-role">— Software Engineering Intern</span></h3>
+                <p>A real-time chat application on Node.js + Express + Socket.IO; a hybrid MongoDB + MySQL database architecture; REST APIs supporting scalable real-time messaging.</p>
+              </div>
             </div>
           </li>
         </ol>
@@ -306,19 +411,19 @@
           </div>
         </div>
 
-        <div class="toolkit" data-k-in>
-          <p class="meta-k">The toolkit</p>
+        <div class="toolkit">
+          <p class="toolkit-k" data-k-in>The toolkit</p>
           <div class="toolkit-groups">
-            <div class="toolkit-group"><p class="group-k kicker-tight">Pipelines &amp; data</p>
+            <div class="toolkit-group" data-k-in style="--d:0"><p class="group-k">Pipelines &amp; data</p>
               <ul class="chips"><li>Airflow</li><li>dbt</li><li>Kafka</li><li>Spark</li><li>PostgreSQL</li><li>MongoDB</li><li>Snowflake</li><li>ETL / ELT</li></ul>
             </div>
-            <div class="toolkit-group"><p class="group-k kicker-tight">AI &amp; ML</p>
+            <div class="toolkit-group" data-k-in style="--d:1"><p class="group-k">AI &amp; ML</p>
               <ul class="chips"><li>TensorFlow</li><li>PyTorch</li><li>Keras</li><li>scikit-learn</li><li>LangChain</li><li>Ollama / Mistral</li><li>Hugging Face</li><li>OpenCV</li></ul>
             </div>
-            <div class="toolkit-group"><p class="group-k kicker-tight">Cloud &amp; ops</p>
+            <div class="toolkit-group" data-k-in style="--d:2"><p class="group-k">Cloud &amp; ops</p>
               <ul class="chips"><li>AWS (S3 · EC2 · Lambda)</li><li>OpenStack</li><li>Docker</li><li>Kubernetes</li><li>Git / CI-CD</li><li>Linux</li></ul>
             </div>
-            <div class="toolkit-group"><p class="group-k kicker-tight">Visualization</p>
+            <div class="toolkit-group" data-k-in style="--d:3"><p class="group-k">Visualization</p>
               <ul class="chips"><li>Power BI</li><li>Tableau</li><li>Streamlit</li><li>Grafana</li><li>Plotly / Matplotlib</li></ul>
             </div>
           </div>
@@ -326,32 +431,82 @@
       </div>
     </section>
 
-    <!-- ============ INVITATION ============ -->
-    <section id="contact" class="contact">
-      <div class="wrap">
-        <div class="contact-inner" data-k-in>
-          <p class="kicker">Open for summer 2027</p>
-          <h2>Bring the problem.<br>I'll bring the pipeline.</h2>
-          <p class="contact-lede">Documented work, tested transforms, honest numbers — and the receipts above to check me against. One email starts the conversation.</p>
-          <div class="hero-cta contact-cta">
-            <a class="btn btn-primary" href="mailto:harounbensalem02@gmail.com">Start the conversation</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/harounbensalem/" rel="me noopener">LinkedIn</a>
-          </div>
+    <!-- ============ ✦ · INTERLUDE — the sitter: the engineer behind the receipts ============ -->
+    <section class="sitter" aria-label="Portrait moment — the engineer behind the receipts">
+      <div class="sitter-stage">
+        <div class="sitter-noir" aria-hidden="true"></div>
+        <div class="sitter-name" aria-hidden="true">HAROUN<i>the engineer behind the receipts</i></div>
+        <div class="sitter-halo" aria-hidden="true">
+          <img class="sitter-aura" src="assets/portrait-aura.webp" alt="" decoding="async" loading="lazy">
+        </div>
+        <div class="sitter-plate">
+          <img class="sitter-still" src="assets/portrait.webp" alt="Portrait of Haroun Ben Salem" decoding="async" loading="lazy">
+          <canvas class="sitter-canvas" data-portrait="assets/portrait.webp" aria-hidden="true"></canvas>
+        </div>
+        <div class="sitter-veil" aria-hidden="true"></div>
+        <div class="sitter-chrome" aria-hidden="true">
+          <p class="sitter-k"><b>Interlude</b> — portrait of the engineer</p>
+          <p class="sitter-reel">H·Ben·Salem — data · ai<br>Tunisia · open for PFE 2027</p>
+          <p class="sitter-cap sitter-cap-1">Ships end-to-end<em>Airflow orchestrations, Kafka streams, dbt-tested models.</em></p>
+          <p class="sitter-cap sitter-cap-2">Tests the transforms<em>38 data-quality checks behind every number.</em></p>
+          <p class="sitter-cap sitter-cap-3">Prints honest numbers<em>Every number belongs to a system I actually built.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 · INVITATION — open ticket ============ -->
+    <section id="contact" class="contact section">
+      <canvas class="plex plex-orb" data-plex="orb" aria-hidden="true"></canvas>
+      <div class="wrap contact-inner" data-k-in>
+        <p class="chapter">04 · Open ticket</p>
+        <h2 class="contact-display" data-fx="split">Bring the problem.<br><em>I'll bring the pipeline.</em></h2>
+        <p class="contact-lede">Documented work, tested transforms, honest numbers — and the receipts above to check me against. One email starts the conversation.</p>
+        <div class="hero-cta contact-cta">
+          <a class="btn btn-primary" href="mailto:harounbensalem02@gmail.com" data-fx="magnet" data-fx-strength="0.25">Start the conversation</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/harounbensalem/" rel="me noopener" data-fx="magnet" data-fx-strength="0.25">LinkedIn</a>
+        </div>
+      </div>
+      <div class="wrap contact-lower">
+        <figure class="id-card" data-k-in>
+          <img src="assets/portrait-id.webp" width="900" height="1200" alt="Haroun Ben Salem's suit in detail — navy lapels, oxblood tie and pocket square, white boutonnière and watch, before painted tiles and a gilded frame" loading="lazy" decoding="async">
+          <figcaption class="id-cap">
+            <p class="id-name">Haroun Ben Salem</p>
+            <p class="id-role">Data engineer · AI engineer · Tunisia</p>
+            <p class="id-line">Ships end-to-end · Tests the transforms · Prints honest numbers</p>
+          </figcaption>
+        </figure>
+        <div class="contact-rows" data-k-in style="--d:1">
+          <div class="c-row"><p class="meta-k">Email</p><p class="c-val"><a href="mailto:harounbensalem02@gmail.com">harounbensalem02@gmail.com</a>
+            <button class="copy-btn" type="button" data-copy="harounbensalem02@gmail.com" aria-label="Copy email address">Copy</button></p></div>
+          <div class="c-row"><p class="meta-k">LinkedIn</p><p class="c-val"><a href="https://www.linkedin.com/in/harounbensalem/" rel="me noopener">linkedin.com/in/harounbensalem</a></p></div>
+          <div class="c-row"><p class="meta-k">Base</p><p class="c-val">Tunisia — available for PFE 2027</p></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer stage-cover">
+  <footer class="footer">
     <div class="wrap footer-inner">
       <p class="footer-brand kicker-tight">Haroun·Ben·Salem — Tunisia</p>
       <p class="footer-mail mono">harounbensalem02@gmail.com</p>
-      <p class="footer-fine">© 2026 · No tracking, no cookies · Runs on free tiers, 0 credits</p>
+      <p class="footer-fine">© 2026</p>
     </div>
   </footer>
 
-  <script src="scene.js" defer></script>
-  <script src="fx.js" defer></script>
-  <script src="site.js" defer></script>
+  <script>
+    /* phones paint the composed still + real parallax planes; skip the WebGL depth
+       texture there (saves the biggest mobile boot task, no visible loss at 1x-3x) */
+    if (matchMedia('(max-width: 720px)').matches) {
+      var depthCanvas = document.querySelector('canvas[data-k-depth]');
+      if (depthCanvas) depthCanvas.remove();
+    }
+    /* reduced motion gets the engine's own static composition immediately, even
+       before the interaction-loaded engine arrives */
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var heroSection = document.querySelector('[data-k-hero]');
+      if (heroSection) heroSection.classList.add('k-static');
+    }
+  </script>
+  <script src="assets/site.min.js" defer></script>
 </body>
 </html>
